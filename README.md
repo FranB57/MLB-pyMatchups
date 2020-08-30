@@ -33,6 +33,21 @@ This project allows you pull and sort data from the https://baseballsavant.mlb.c
 
 ## Code Example
 Currently main funcionality is available in the matchupScraper.py file. From there is that you can run the functions below to display the daily matchup data and carreer stats.
+```python
+#display matchup data in matchupScraper.py
+#for stat_sort the parameters are ls(list dict), the number you would like to sort by and the column you would like to sort
+
+df = pd.DataFrame(stat_sort(ls,10,"abs"), columns=['player_name','player_id',"pitcher","pitcher_id","abs","pa","hits","ba","slg","woba","xwoba","xslg"])  
+#set dataframe and specify the columns you want displayed. To customize the columns just add "",
+print(df)
+
+#pull historical pitcher vs batter data from specified index
+get_historical_matchup(4)
+
+#pull historical player statistics 
+#identify B for the Batter of specified index or P for the pitcher of specified index
+player_historical("P",4)
+```
 
 #### Installation
 For now the best way to install and use the code is to directly clone the repository and then run your commands in the main matchupScraper.py file. 
